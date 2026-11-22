@@ -220,6 +220,11 @@ a {
   transition: 1.5s;
 }
 
+.section-3 .triple-square,
+.section-3 .woman-cel {
+  pointer-events: none;
+}
+
 .section-3 .content .content-left {
   display: flex;
   flex-direction: column;
@@ -556,6 +561,11 @@ a {
   height: 742px;
 }
 
+.section-7 > img,
+.section-10 > img[class*="question-"] {
+  pointer-events: none;
+}
+
 .section-7 .question-1 {
   position: absolute;
   top: -10%;
@@ -694,11 +704,6 @@ a {
 .section-8 {
   background: linear-gradient(180deg, rgba(181, 181, 181, 1) 0%, rgba(255, 255, 255, 1) 81%);
   position: relative;
-}
-
-.section-8 .cursor {
-  top: 95%;
-  left: 22%;
 }
 
 .section-8 .sparks3 {
@@ -876,12 +881,6 @@ a {
   font-size: var(--vivo-h3-size);
   color: #eb3c7d;
   text-align: left;
-}
-
-.section-10 .cursor {
-  top: 38%;
-  left: 90%;
-  width: 6rem;
 }
 
 .section-10 .sabe-como-modal .icon-oculos {
@@ -1082,13 +1081,6 @@ a {
   background: linear-gradient(0deg, rgba(189, 74, 255, 1) 0%, rgba(56, 0, 84, 1) 100%);
 }
 
-.section-12 .cursor {
-  top: 89%;
-  left: 96%;
-  width: 6rem;
-  z-index: 9;
-}
-
 .section-12 .dialog {
   margin-left: 55px;
 }
@@ -1170,18 +1162,6 @@ a {
   margin-left: 65px;
 }
 
-.section-15 .cursor {
-  top: 47%;
-  left: 19%;
-  width: 6rem;
-}
-
-.section-16 .cursor {
-  top: 94%;
-  left: 94%;
-  width: 6rem;
-}
-
 .section-18 {
   background: linear-gradient(180deg, rgba(102, 0, 153, 1) 80%, rgba(235, 60, 125, 1) 100%);
 }
@@ -1261,10 +1241,6 @@ a {
   background: linear-gradient(180deg, rgba(235, 60, 125, 1) 80%, rgba(102, 0, 153, 1) 100%);
 }
 
-.section-25 .cursor_card {
-  top: 51%;
-}
-
 .section-25 .ball {
   padding-top: 3rem;
   padding-bottom: 1rem;
@@ -1296,10 +1272,6 @@ a {
   margin-top: -3px;
   background: linear-gradient(180deg, rgba(178, 178, 177, 1) 1%, rgba(178, 178, 177, 1) 23%, rgba(223, 224, 225, 1) 42%, rgba(239, 240, 241, 1) 83%) !important;
   padding-top: 25px;
-}
-
-.section-28 .cursor_card {
-  top: 95%;
 }
 
 .section-31 {

@@ -425,8 +425,7 @@ iframe {
 }
 
 .section-8 .cel-man,
-.section-8 .sparks3,
-.section-8 .cursor {
+.section-8 .sparks3 {
   display: none;
 }
 
@@ -461,8 +460,7 @@ iframe {
 .section-10 .question-9,
 .section-10 .question-10,
 .section-10 .question-11,
-.section-10 .question-12,
-.section-10 .cursor {
+.section-10 .question-12 {
   display: none;
 }
 
@@ -633,8 +631,7 @@ iframe {
 
 .section-15 .lamp-1,
 .section-15 .lamp-2,
-.section-15 .black-man,
-.section-15 .cursor {
+.section-15 .black-man {
   display: none;
 }
 
@@ -832,8 +829,7 @@ iframe {
   margin: 0 0 1rem !important;
 }
 
-.section-26 .moca,
-.section-26 .cursor {
+.section-26 .moca {
   display: none;
 }
 
@@ -1105,12 +1101,6 @@ iframe {
   height: 4rem;
 }
 
-.cursor,
-.cursor_card,
-.cursor_pop1,
-.cursor_pop2 {
-  display: none;
-}
 
 #modal-dialog {
   padding: max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right))

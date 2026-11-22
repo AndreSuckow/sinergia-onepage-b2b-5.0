@@ -515,8 +515,6 @@ const smartEmpresasContentConfig = {
      </p>
   </div>
   <div class="dialog-vertical flex flex-col items-center max-w-1230" style="position: relative">
-  <img src="./assets/cursor.png" alt="" class="abs cursor_pop1">
-  <img src="./assets/cursor.png" alt="" class="abs cursor_pop2">
      <img src="./assets/section/avatar.png" alt="" />
      <div class="card-sm z-10 top-triangle relative deg_grey1" style="padding: 2rem; margin-top: 2rem;">
         <p class="text-purple">
