@@ -62,7 +62,16 @@
   border: 0;
   background: transparent;
   padding: 0;
-  z-index: 2;
+}
+
+body a[href],
+body button,
+body [onclick],
+body [role="button"],
+body .pointer,
+body .clickable-icon {
+  position: relative;
+  z-index: 99999;
 }
 
 .click-hint::after {
