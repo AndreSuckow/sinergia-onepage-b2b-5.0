@@ -66,12 +66,14 @@
   display: block;
 }
 
-#sidebar li a:hover {
-  transform: scale(1.1);
-}
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) and (min-height: 601px) {
+  #sidebar li a:hover {
+    transform: scale(1.1);
+  }
 
-#sidebar li:hover a {
-  color: #380054;
+  #sidebar li:hover a {
+    color: #380054;
+  }
 }
 
 #sidebar li.active img {

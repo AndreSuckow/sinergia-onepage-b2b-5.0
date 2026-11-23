@@ -177,5 +177,25 @@
         margin-right: 0;
     }
 }
+
+@media screen and (min-width: 1500px) {
+    #sidebar {
+        width: clamp(5.5rem, calc(3vw + 2rem), 8rem);
+        border-radius: clamp(2.5rem, calc(1.2vw + 1.5rem), 3.5rem);
+    }
+
+    #sidebar ul {
+        padding: 0 1.5625rem;
+    }
+
+    #sidebar li img {
+        width: clamp(2.375rem, calc(1.2vw + 1rem), 3.5rem);
+        height: clamp(2.375rem, calc(1.2vw + 1rem), 3.5rem);
+    }
+
+    #sidebar ul li a {
+        font-size: clamp(1.4rem, calc(0.65vw + 0.6rem), 2rem);
+    }
+}
  
    
