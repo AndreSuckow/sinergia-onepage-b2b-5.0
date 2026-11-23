@@ -56,73 +56,12 @@ a {
   text-decoration: none;
 }
 
-.section-1 {
-  margin: 0 auto;
-  background-color: #380054;
-  position: relative;
-  overflow: hidden;
-  height: 1120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.section-1 .sparks {
-  width: 30%;
-  position: absolute;
-  top: 5%;
-  right: 0%;
-  transition: 1.5s;
-  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 6.5));
-}
-
-.section-1 .content .retranca-and-logo {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-  z-index: 1;
-}
-
-.section-1 .content .main-title {
-  z-index: 1;
-  text-align: center;
-}
-
-.section-1 .content .subtitle {
-  margin-bottom: 4rem;
-  z-index: 1;
-  text-align: center;
-}
-
-.section-1 .content .container-video {
-  position: relative;
-  width: 100%;
-  height: 55rem;
-  background-image: url("../assets/section-1/images/caixa-video.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 3;
-  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 6.5));
-}
-
-.section-1 .content .container-video .video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-37%, -50%);
-  max-width: 75%;
-  max-height: 75%;
-  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 6.5));
-}
-
 /* Section 2 */
 
 .section-2 {
   /* background-color: var(--cinza-claro); */
   background-image: linear-gradient(to right top, #380054, #400060, #49006d, #51007a, #5a0087, #6e008b, #81008f, #930093, #ae028e, #c51488, #da2883, #eb3c7d);
+  padding-bottom: 240px;
 }
 
 .section-2 .sparks {
