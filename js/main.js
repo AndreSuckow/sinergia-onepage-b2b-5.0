@@ -6,28 +6,25 @@ var margin = 0;
 function calcScale() {
     const container = document.querySelector('#container');
     if (!container) return;
+    const sidebar = document.querySelector('#sidebar');
 
     if (window.matchMedia("(max-width: 768px)").matches) {
         container.style.removeProperty("transform");
+        container.style.removeProperty("left");
+        if (sidebar) sidebar.style.removeProperty("left");
         return;
     }
 
-    let pivWidth;
-
-    pivWidth = document.documentElement.clientWidth / container_width;
-    pivWidth = pivWidth.toFixed(3);
-
-    let pivScale = pivWidth;
-    pivScale = pivScale - margin / 100;
-    console.log(`Scale ${pivWidth}`);
+    const viewportWidth = document.documentElement.clientWidth;
+    let pivScale = Number((viewportWidth / container_width).toFixed(3));
+    pivScale -= margin / 100;
+    console.log(`Scale ${pivScale}`);
     if (pivScale > 1) pivScale = 1;
-    try {
-        container.style.cssText = `
-        transform: scale(${pivScale});
-        `
-    } catch (err) {
-        console.log("Scale Fail =>\n", err);
-    }
+
+    const horizontalOffset = Math.max((viewportWidth - container_width * pivScale) / 2, 0);
+    container.style.left = `${horizontalOffset}px`;
+    container.style.transform = `scale(${pivScale})`;
+    if (sidebar) sidebar.style.left = `${horizontalOffset}px`;
 
 }
 
