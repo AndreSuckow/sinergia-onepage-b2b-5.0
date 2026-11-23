@@ -6,6 +6,50 @@ const menuConfig = [
   { icon: 'assets/menu/encantar.png', text: 'Encantar' },
 ];
 
+let pendingMenuItem = null;
+
+function setActiveMenuItem(activeItem, preserveDuringNavigation = false) {
+  const menuList = document.getElementById('menuList');
+
+  menuList.querySelectorAll('li.active').forEach(item => {
+    item.classList.remove('active');
+  });
+  if (activeItem) activeItem.classList.add('active');
+  pendingMenuItem = preserveDuringNavigation ? activeItem : null;
+}
+
+function updateActiveMenuItem() {
+  const menuList = document.getElementById('menuList');
+  const activationLine = window.innerHeight * 0.35;
+
+  if (pendingMenuItem) {
+    const pendingLink = pendingMenuItem.querySelector('a');
+    const pendingTarget = document.getElementById(pendingLink.hash.slice(1));
+
+    if (pendingTarget && pendingTarget.getBoundingClientRect().top > activationLine) {
+      return;
+    }
+    pendingMenuItem = null;
+  }
+
+  let activeItem = null;
+
+  menuList.querySelectorAll('li').forEach(item => {
+    const link = item.querySelector('a');
+    const target = document.getElementById(link.hash.slice(1));
+
+    if (target && target.getBoundingClientRect().top <= activationLine) {
+      activeItem = item;
+    }
+  });
+
+  setActiveMenuItem(activeItem);
+}
+
+function clearPendingMenuItem() {
+  pendingMenuItem = null;
+}
+
 function createMenu() {
   const menuList = document.querySelector('#sidebar > #menuList');
 
@@ -19,10 +63,7 @@ function createMenu() {
     link.href = `#${item.text}`
 
     li.addEventListener('click', () => {
-      menuList.querySelectorAll('li.active').forEach(activeItem => {
-        activeItem.classList.remove('active');
-      });
-      li.classList.add('active');
+      setActiveMenuItem(li, true);
     });
 
     li.appendChild(img);
@@ -66,6 +107,20 @@ updateSidebarVisibility();
 
 const menuList = document.getElementById('menuList');
 const elementosParaEstilizar = document.querySelectorAll('#sidebar');
+
+window.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+window.addEventListener('resize', updateActiveMenuItem);
+window.addEventListener('hashchange', updateActiveMenuItem);
+window.addEventListener('load', updateActiveMenuItem, { once: true });
+window.addEventListener('wheel', clearPendingMenuItem, { passive: true });
+window.addEventListener('touchstart', clearPendingMenuItem, { passive: true });
+window.addEventListener('pointerdown', clearPendingMenuItem, { passive: true });
+window.addEventListener('keydown', event => {
+  if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) {
+    clearPendingMenuItem();
+  }
+});
+updateActiveMenuItem();
 
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   menuList.addEventListener('mouseenter', () => {
