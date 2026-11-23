@@ -18,10 +18,11 @@ function createMenu() {
     link.textContent = item.text;
     link.href = `#${item.text}`
 
-     
-     li.addEventListener('click', () => {
-      img.style.filter = 'brightness(0) invert(1)';
-      link.style.filter = 'brightness(0) invert(1)';
+    li.addEventListener('click', () => {
+      menuList.querySelectorAll('li.active').forEach(activeItem => {
+        activeItem.classList.remove('active');
+      });
+      li.classList.add('active');
     });
 
     li.appendChild(img);

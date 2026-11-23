@@ -70,11 +70,15 @@
   transform: scale(1.1);
 }
 
-#sidebar li:hover img {
+#sidebar li:hover a {
+  color: #380054;
+}
+
+#sidebar li.active img {
   filter: brightness(0) invert(1);
 }
 
-#sidebar li:hover a {
+#sidebar li.active a {
   color: white;
 }
 
